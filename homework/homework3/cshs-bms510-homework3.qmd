@@ -19,7 +19,7 @@ library(tidyverse)
 
 ## read in the dataset
 
-df <- readxl::read_excel('data/emergency.xlsx', sheet = 1) ## part 1 and part 3 dataset
+df <- readxl::read_excel(here::here('data/emergency.xlsx'), sheet = 1) ## part 1 and part 3 dataset
 
 ## convert categorical vars into factors
 df <- df %>%
@@ -262,7 +262,7 @@ Copy this line of code into your R environment, run it, and you should be able t
 
 se <- function(x) sqrt(var(x)/length(x))
 
-df2 <- readxl::read_excel('data/vaccine2.xlsx', sheet = 1) %>% janitor::clean_names() ## part 2 dataset
+df2 <- readxl::read_excel(here::here('data/vaccine2.xlsx'), sheet = 1) %>% janitor::clean_names() ## part 2 dataset
 
 temp <- df2
 
