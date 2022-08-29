@@ -9,7 +9,7 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.0.37">
 
-  <meta name="author" content="Michael Luu &amp; Marcio Diniz">
+  <meta name="author" content="Michael Luu | Marcio Diniz">
   <title>Data manipulation in R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -387,7 +387,7 @@
 <section id="title-slide" class="center">
   <h1 class="title">Data manipulation in R</h1>
   <p class="subtitle">Introduction to the tidyverse: dplyr &amp; tidyr</p>
-  <p class="author">Michael Luu &amp; Marcio Diniz</p>
+  <p class="author">Michael Luu | Marcio Diniz</p>
   <p class="date">8/29/22</p>
 </section>
 
@@ -478,15 +478,17 @@
 </section>
 <section id="what-is-the-tidyverse" class="slide level2">
 <h2>What is the tidyverse?</h2>
-<p>A collection of R packages that are used to faciliate data exploration, visualization, and ‘tidying’ of your data.</p>
+<p>A collection of R packages that are used to facilitate data exploration, visualization, and ‘tidying’ of your data.</p>
+<div>
 <ul>
-<li><strong>dplyr</strong> - manipulation of data</li>
-<li><strong>ggplot2</strong> - visualization of data</li>
-<li><strong>readr</strong> - importing data into R</li>
-<li><strong>tibble</strong> - creation of dataframes in R</li>
-<li><strong>tidyr</strong> - ‘tidying’ or ‘cleaning’ your data</li>
-<li><strong>purrr</strong> - functional or iterative programming in R</li>
+<li class="fragment"><strong>dplyr</strong> - manipulation of data</li>
+<li class="fragment"><strong>ggplot2</strong> - visualization of data</li>
+<li class="fragment"><strong>readr</strong> - importing data into R</li>
+<li class="fragment"><strong>tibble</strong> - creation of dataframes in R</li>
+<li class="fragment"><strong>tidyr</strong> - ‘tidying’ or ‘cleaning’ your data</li>
+<li class="fragment"><strong>purrr</strong> - functional or iterative programming in R</li>
 </ul>
+</div>
 </section>
 <section id="what-is-a-function" class="slide level2 smaller">
 <h2>What is a function ?</h2>
@@ -508,14 +510,16 @@
 <section id="dplyr" class="slide level2 smaller">
 <h2>dplyr</h2>
 <p>These are the <strong>six</strong> main <code>dplyr</code> functions that we will use to perform the vast majority of the necessary data manipulations in R and will be the focus</p>
+<div>
 <ul>
-<li><strong><code>mutate()</code></strong> adds new variables that are functions of existing variables</li>
-<li><strong><code>select()</code></strong> subset variables based on their names.</li>
-<li><strong><code>filter()</code></strong> subset cases based on their values.</li>
-<li><strong><code>summarise()</code></strong> reduces multiple values down to a single summary.</li>
-<li><strong><code>arrange()</code></strong> changes the ordering of the rows.</li>
-<li><strong><code>glimpse()</code></strong> obtain a ‘glimpse’ of the dataframe.</li>
+<li class="fragment"><strong><code>mutate()</code></strong> adds new variables that are functions of existing variables</li>
+<li class="fragment"><strong><code>select()</code></strong> subset variables based on their names.</li>
+<li class="fragment"><strong><code>filter()</code></strong> subset cases based on their values.</li>
+<li class="fragment"><strong><code>summarise()</code></strong> reduces multiple values down to a single summary.</li>
+<li class="fragment"><strong><code>arrange()</code></strong> changes the ordering of the rows.</li>
+<li class="fragment"><strong><code>glimpse()</code></strong> obtain a ‘glimpse’ of the dataframe.</li>
 </ul>
+</div>
 
 <aside><div>
 <ul>
@@ -525,10 +529,12 @@
 <section id="tidyr" class="slide level2 smaller">
 <h2>tidyr</h2>
 <p>We will also focus on <strong>two</strong> main <code>tidyr</code> functions</p>
+<div>
 <ul>
-<li><strong><code>pivot_longer()</code></strong> transposition of data into the long format</li>
-<li><strong><code>pivot_wider()</code></strong> transposition of data into the wider format</li>
+<li class="fragment"><strong><code>pivot_longer()</code></strong> transposition of data into the long format</li>
+<li class="fragment"><strong><code>pivot_wider()</code></strong> transposition of data into the wider format</li>
 </ul>
+</div>
 
 <aside><div>
 <ul>
@@ -560,12 +566,14 @@
 <section id="pipe" class="slide level2">
 <h2>%&gt;% (Pipe)</h2>
 <p>Another very important function is the <code>%&gt;%</code> (pipe) operator.</p>
+<div>
 <ul>
-<li><code>%&gt;%</code> allows us to chain multiple functions together.</li>
-<li><code>x %&gt;% f()</code> is interpreted as <code>f(x)</code></li>
-<li><code>x %&gt;% f(y)</code> is interpretted as <code>f(x, y)</code></li>
-<li><code>x %&gt;% f() %&gt;% g() %&gt;% h()</code> is equivalent to <code>h(g(f(x)))</code></li>
+<li class="fragment"><code>%&gt;%</code> allows us to chain multiple functions together.</li>
+<li class="fragment"><code>x %&gt;% f()</code> is interpreted as <code>f(x)</code></li>
+<li class="fragment"><code>x %&gt;% f(y)</code> is interpretted as <code>f(x, y)</code></li>
+<li class="fragment"><code>x %&gt;% f() %&gt;% g() %&gt;% h()</code> is equivalent to <code>h(g(f(x)))</code></li>
 </ul>
+</div>
 </section>
 <section id="pipe-1" class="slide level2 smaller">
 <h2>%&gt;% (Pipe)</h2>
@@ -804,7 +812,7 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, seto�
 <h2>Transposition</h2>
 
 <img data-src="figures/tidyr-longer-wider.gif" class="r-stretch quarto-figure-center"></section>
-<section id="transposition-2" class="slide level2 smaller">
+<section id="transposition-2" class="slide level2">
 <h2>Transposition</h2>
 <p>Since the original dataset does not include a unique identifier for each observation, the below code is to simply add a identifier using the rowname called ‘index’.</p>
 <div class="cell">

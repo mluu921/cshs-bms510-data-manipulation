@@ -1,7 +1,7 @@
 ---
 title: "Data manipulation in R"
 subtitle: "Introduction to the tidyverse: dplyr & tidyr"
-author: "Michael Luu & Marcio Diniz"
+author: "Michael Luu | Marcio Diniz"
 format: 
   revealjs:
     theme: [default, custom.scss]
@@ -80,14 +80,16 @@ knitr::include_graphics("figures/tidyverse_logo.PNG")
 
 ## What is the tidyverse?
 
-A collection of R packages that are used to faciliate data exploration, visualization, and 'tidying' of your data.
+A collection of R packages that are used to facilitate data exploration, visualization, and 'tidying' of your data.
 
+::: incremental
 -   **dplyr** - manipulation of data
 -   **ggplot2** - visualization of data
 -   **readr** - importing data into R
 -   **tibble** - creation of dataframes in R
 -   **tidyr** - 'tidying' or 'cleaning' your data
 -   **purrr** - functional or iterative programming in R
+:::
 
 ## What is a function ? {.smaller}
 
@@ -109,12 +111,14 @@ In the above example, the function 'name' is `f()`, the function has 1 input `x`
 
 These are the **six** main `dplyr` functions that we will use to perform the vast majority of the necessary data manipulations in R and will be the focus
 
+::: incremental
 -   **`mutate()`** adds new variables that are functions of existing variables
 -   **`select()`** subset variables based on their names.
 -   **`filter()`** subset cases based on their values.
 -   **`summarise()`** reduces multiple values down to a single summary.
 -   **`arrange()`** changes the ordering of the rows.
 -   **`glimpse()`** obtain a 'glimpse' of the dataframe.
+:::
 
 ::: aside
 -   https://dplyr.tidyverse.org/
@@ -124,8 +128,10 @@ These are the **six** main `dplyr` functions that we will use to perform the vas
 
 We will also focus on **two** main `tidyr` functions
 
+::: incremental
 -   **`pivot_longer()`** transposition of data into the long format
 -   **`pivot_wider()`** transposition of data into the wider format
+:::
 
 ::: aside
 -   https://tidyr.tidyverse.org/
@@ -156,10 +162,12 @@ knitr::include_graphics("figures/function_mutate_description.PNG")
 
 Another very important function is the `%>%` (pipe) operator.
 
+::: incremental
 -   `%>%` allows us to chain multiple functions together.
 -   `x %>% f()` is interpreted as `f(x)`
 -   `x %>% f(y)` is interpretted as `f(x, y)`
 -   `x %>% f() %>% g() %>% h()` is equivalent to `h(g(f(x)))`
+:::
 
 ## %\>% (Pipe) {.smaller}
 
@@ -321,7 +329,7 @@ knitr::include_graphics("figures/original-dfs-tidy.png")
 
 ![](figures/tidyr-longer-wider.gif){fig-align="center"}
 
-## Transposition {.smaller}
+## Transposition
 
 Since the original dataset does not include a unique identifier for each observation, the below code is to simply add a identifier using the rowname called 'index'.
 
