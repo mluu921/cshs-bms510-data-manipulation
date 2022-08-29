@@ -1,0 +1,26 @@
+/*-- scss:defaults --*/
+$theme-white: #FFFFFF;
+$theme-dark-blue: #011627;
+$theme-teal: #2EC4B6;
+$theme-red: #E71D36;
+$theme-orange: #FF9F1C;
+
+$body-bg: $theme-white;
+$body-color: $theme-dark-blue;
+$link-color: $theme-dark-blue;
+$presentation-heading-color: lighten($theme-dark-blue, 15%);
+
+/*-- scss:rules --*/
+
+.reveal .slide a {
+  text-decoration: underline;
+}
+
+.reveal .title-inverse {
+  background-color: $theme-dark-blue;
+}
+
+.orange {
+  color: $theme-orange;
+}
+
