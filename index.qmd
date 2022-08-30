@@ -183,6 +183,14 @@ The input of each tidyverse function is a data.frame, and the output of each of 
 
 The pipe operator makes our code significantly more 'readable'
 
+## Debugging
+
+::: {style='fig-align: center;'}
+
+![](figures/debugging.jpg)
+
+:::
+
 ## Help
 
 ```{r, out.width='70%', fig.align='center'}
