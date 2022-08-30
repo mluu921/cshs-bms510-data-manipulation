@@ -1,7 +1,8 @@
 ---
 title: "Data manipulation in R"
 subtitle: "Introduction to the tidyverse: dplyr & tidyr"
-author: "Michael Luu | Marcio Diniz"
+author: 
+  - "Michael Luu | Marcio Diniz"
 format: 
   revealjs:
     theme: [default, custom.scss]
@@ -11,7 +12,7 @@ format:
     menu: true
     overview: true
     chalkboard: true
-date: today
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
 chalkboard: true
 ---
 
@@ -19,7 +20,7 @@ chalkboard: true
 library(tidyverse)
 ```
 
-# Workflow in Statistical Analysis {.title-inverse}
+# Workflow in Statistical Analysis
 
 ## 
 
@@ -28,7 +29,7 @@ library(tidyverse)
 knitr::include_graphics(here::here("figures/data-science-explore.png"))
 ```
 
-# What is 'tidy' data? {.title-inverse}
+# What is 'tidy' data?
 
 ## What is 'tidy' data? {.smaller}
 
@@ -65,7 +66,7 @@ iris <- as_tibble(iris)
 iris
 ```
 
-# tidyverse {.title-inverse}
+# tidyverse 
 
 ## Introduction to the tidyverse
 
@@ -105,7 +106,7 @@ knitr::include_graphics("figures/function.PNG")
 
 In the above example, the function 'name' is `f()`, the function has 1 input `x`, and the function has 1 output `x^2`.
 
-# dplyr and tidyr {.title-inverse}
+# dplyr and tidyr 
 
 ## dplyr {.smaller}
 
@@ -235,7 +236,7 @@ knitr::include_graphics(c("figures/tidyr-cheatsheet.PNG"))
 -   https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf
 :::
 
-# Example {.title-inverse}
+# Example 
 
 ## Example
 
@@ -375,7 +376,7 @@ wide <- pivot_wider(
 wide
 ```
 
-# R markdown {.title-inverse}
+# R markdown 
 
 ## R markdown
 
@@ -418,3 +419,7 @@ knitr::include_graphics("figures/rmarkdown-gallery.PNG")
 ::: aside
 -   https://rmarkdown.rstudio.com/gallery.html
 :::
+
+
+
+
