@@ -21,7 +21,7 @@ library(tidyverse)
 
 [Introduction to the tidyverse: dplyr & tidyr]{.red}
 
-Michael Luu, MPH | Marcio Diniz, PhD
+Michael Luu, MPH \| Marcio Diniz, PhD
 
 `r format(Sys.Date(), '%B %d, %Y')`
 
@@ -71,7 +71,7 @@ iris <- as_tibble(iris)
 iris
 ```
 
-# tidyverse 
+# tidyverse
 
 ## Introduction to the tidyverse
 
@@ -111,7 +111,7 @@ knitr::include_graphics("figures/function.PNG")
 
 In the above example, the function 'name' is `f()`, the function has 1 input `x`, and the function has 1 output `x^2`.
 
-# dplyr and tidyr 
+# dplyr and tidyr
 
 ## dplyr {.smaller}
 
@@ -189,14 +189,6 @@ The input of each tidyverse function is a data.frame, and the output of each of 
 
 The pipe operator makes our code significantly more 'readable'
 
-## Debugging
-
-::: {style='fig-align: center;'}
-
-![](figures/debugging.jpg)
-
-:::
-
 ## Help
 
 ```{r, out.width='70%', fig.align='center'}
@@ -241,7 +233,7 @@ knitr::include_graphics(c("figures/tidyr-cheatsheet.PNG"))
 -   https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf
 :::
 
-# Example 
+# Example
 
 ## Example
 
@@ -386,6 +378,19 @@ wide <- pivot_wider(
 wide
 ```
 
+# Debugging
 
+## Debugging
 
+::: {style="fig-align: center;"}
+![](figures/debugging.jpg)
+:::
 
+## Debugging
+
+Errors and bugs in your code [will]{.red} happen. Below are a few simple tips that will hopefully aid your debugging process.
+
+-   Systematically run your code line by line to identify the specific piece of your code that is causing the error.
+-   Identify the error message in your R console and Google it.
+-   Stack Overflow is an online Q/A website where you can ask your programming questions.
+-   Trial and Error - modify the piece of code, and run it again.
