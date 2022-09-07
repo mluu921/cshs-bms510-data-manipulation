@@ -7,10 +7,9 @@ format:
     footer: Data manipulation in R
     menu: true
     overview: true
-    chalkboard: true
     code-fold: true
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
-chalkboard: true
+self-contained: true
 ---
 
 ```{r, include=F}
