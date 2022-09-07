@@ -7,9 +7,9 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.37">
+  <meta name="generator" content="quarto-1.0.36">
 
-  <meta name="dcterms.date" content="2022-08-30">
+  <meta name="dcterms.date" content="2022-09-07">
   <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -389,7 +389,7 @@
 <h1><span class="r-fit-text">Data manipulation in R</span></h1>
 <p><span class="red">Introduction to the tidyverse: dplyr &amp; tidyr</span></p>
 <p>Michael Luu, MPH | Marcio Diniz, PhD</p>
-<p>August 30, 2022</p>
+<p>September 07, 2022</p>
 </section>
 
 <section>
@@ -599,7 +599,10 @@
 <h2>Help</h2>
 <p>Type a question mark before the name of the function to invoke the help file for that function.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>?mutate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 <img data-src="figures/help_mutate.PNG" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
@@ -659,6 +662,10 @@
 <h2>glimpse()</h2>
 <p><code>glimpse()</code> provides a â€˜glimpseâ€™ of â€˜whatâ€™ is in the dataframe</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>(., <span class="at">width =</span> <span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 150
 Columns: 5
@@ -675,6 +682,10 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <p>Create new variables as functions of other variables <code>mutate()</code></p>
 
 <img data-src="figures/mutate_function.PNG" class="r-stretch"><div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(., <span class="at">ratio =</span> Petal.Length <span class="sc">/</span> Petal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 150 Ã— 6
    Sepal.Length Sepal.Width Petal.Length Petal.Width Species ratio
@@ -698,6 +709,10 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <p>Select variables by their names <code>select()</code></p>
 
 <img data-src="figures/select_function.PNG" class="r-stretch"><div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">select</span>(., Petal.Length, Petal.Width, Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 150 Ã— 3
    Petal.Length Petal.Width Species
@@ -721,6 +736,10 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <p>Select observations by their values <code>filter()</code></p>
 
 <img data-src="figures/filter_function.PNG" class="r-stretch"><div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">filter</span>(., Sepal.Length <span class="sc">&gt;=</span> <span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 128 Ã— 5
    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -744,6 +763,13 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <p>Collapse values down to a summary <code>summarise()</code></p>
 
 <img data-src="figures/summary_function.PNG" class="r-stretch"><div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  .,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length)</span>
+<span id="cb12-4"><a href="#cb12-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 Ã— 1
   mean_sepal_length
@@ -756,6 +782,12 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <h2>summarise()</h2>
 <p><code>group_by()</code> is another dplyr function that is commonly used with <code>summarise()</code>. It allows us to apply the function <code>summarise()</code> within a categorical variable or a â€˜factorâ€™</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">summarise</span>(., <span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 Ã— 2
   Species    mean_sepal_length
@@ -771,6 +803,10 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <p>Reordering rows <code>arrange()</code></p>
 
 <img data-src="figures/arrange_function.PNG" class="r-stretch"><div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(., Sepal.Length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 150 Ã— 5
    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -792,6 +828,10 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <section id="arrange-1" class="slide level2">
 <h2>arrange()</h2>
 <div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(., <span class="fu">desc</span>(Sepal.Length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 150 Ã— 5
    Sepal.Length Sepal.Width Petal.Length Petal.Width Species  
@@ -823,6 +863,12 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <h2>Transposition</h2>
 <p>Since the original dataset does not include a unique identifier for each observation, the below code is to simply add a identifier using the rowname called â€˜indexâ€™.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>iris <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"index"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a>iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 150 Ã— 6
    index Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -844,6 +890,17 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <section id="pivot_longer" class="slide level2">
 <h2>pivot_longer()</h2>
 <div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="at">data =</span> iris,</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="at">cols =</span> <span class="fu">c</span>(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),</span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="at">names_to =</span> <span class="st">"name"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>)</span>
+<span id="cb22-7"><a href="#cb22-7"></a></span>
+<span id="cb22-8"><a href="#cb22-8"></a>long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 600 Ã— 4
    index Species name         value
@@ -865,6 +922,16 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 <section id="pivot_wider" class="slide level2">
 <h2>pivot_wider()</h2>
 <div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="at">data =</span> long,</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">names_from =</span> <span class="st">"name"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="at">values_from =</span> <span class="st">"value"</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>)</span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a>wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 150 Ã— 6
    index Species Sepal.Length Sepal.Width Petal.Length Petal.Width
@@ -882,71 +949,10 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setoâ
 # â€¦ with 140 more rows</code></pre>
 </div>
 </div>
-</section></section>
-<section>
-<section id="r-markdown" class="title-slide slide level1 center">
-<h1>R markdown</h1>
-
-</section>
-<section id="r-markdown-1" class="slide level2">
-<h2>R markdown</h2>
-
-<img data-src="figures/reproducibility_court.png" style="width:80.0%" class="r-stretch"></section>
-<section id="r-markdown-2" class="slide level2 smaller">
-<h2>R markdown</h2>
-<p>We wonâ€™t have the opportunity to go into great depth outside of the basics in report generation, however you can learn more about the capabilities of R markdown from this book.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/rmarkdown-definitive-guide.png" style="width:20.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<ul>
-<li>https://bookdown.org/yihui/rmarkdown/</li>
-</ul>
-</div></aside></section>
-<section id="r-markdown-3" class="slide level2 smaller">
-<h2>R markdown</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/rmarkdown-cheatsheet.PNG" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-
-<aside><div>
-<ul>
-<li>https://github.com/rstudio/cheatsheets/raw/main/rmarkdown-2.0.pdf</li>
-</ul>
-</div></aside></section>
-<section id="r-markdown-4" class="slide level2 smaller">
-<h2>R markdown</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/rmarkdown-gallery.PNG" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-
 <div class="footer footer-default">
 <p>Data manipulation in R</p>
 </div>
-<aside><div>
-<ul>
-<li>https://rmarkdown.rstudio.com/gallery.html</li>
-</ul>
-</div></aside></section></section>
+</section></section>
     </div>
   </div>
 

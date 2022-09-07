@@ -8,6 +8,7 @@ format:
     menu: true
     overview: true
     chalkboard: true
+    code-fold: true
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 chalkboard: true
 ---
@@ -255,7 +256,8 @@ iris
 `glimpse()` provides a 'glimpse' of 'what' is in the dataframe
 
 ```{r}
-glimpse(iris, width = 75)
+#| echo: true
+iris %>% glimpse(., width = 75)
 ```
 
 ## mutate()
@@ -265,6 +267,7 @@ Create new variables as functions of other variables `mutate()`
 ![](figures/mutate_function.PNG)
 
 ```{r}
+#| echo: true
 iris %>% mutate(., ratio = Petal.Length / Petal.Width)
 ```
 
@@ -275,7 +278,7 @@ Select variables by their names `select()`
 ![](figures/select_function.PNG)
 
 ```{r}
-
+#| echo: true
 iris %>% select(., Petal.Length, Petal.Width, Species)
 ```
 
@@ -286,7 +289,7 @@ Select observations by their values `filter()`
 ![](figures/filter_function.PNG)
 
 ```{r}
-
+#| echo: true
 iris %>% filter(., Sepal.Length >= 5.0)
 ```
 
@@ -297,6 +300,7 @@ Collapse values down to a summary `summarise()`
 ![](figures/summary_function.PNG)
 
 ```{r}
+#| echo: true
 iris %>% summarise(
   .,
   mean_sepal_length = mean(Sepal.Length)
@@ -308,7 +312,7 @@ iris %>% summarise(
 `group_by()` is another dplyr function that is commonly used with `summarise()`. It allows us to apply the function `summarise()` within a categorical variable or a 'factor'
 
 ```{r}
-
+#| echo: true
 iris %>%
   group_by(Species) %>%
   summarise(., mean_sepal_length = mean(Sepal.Length))
@@ -321,12 +325,14 @@ Reordering rows `arrange()`
 ![](figures/arrange_function.PNG)
 
 ```{r}
+#| echo: true
 iris %>% arrange(., Sepal.Length)
 ```
 
 ## arrange()
 
 ```{r}
+#| echo: true
 iris %>% arrange(., desc(Sepal.Length))
 ```
 
@@ -347,7 +353,7 @@ knitr::include_graphics("figures/original-dfs-tidy.png")
 Since the original dataset does not include a unique identifier for each observation, the below code is to simply add a identifier using the rowname called 'index'.
 
 ```{r}
-
+#| echo: true
 iris <- iris %>% rownames_to_column(var = "index")
 
 iris
@@ -356,7 +362,7 @@ iris
 ## pivot_longer()
 
 ```{r}
-
+#| echo: true
 long <- pivot_longer(
   data = iris,
   cols = c(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),
@@ -370,7 +376,7 @@ long
 ## pivot_wider()
 
 ```{r}
-
+#| echo: true
 wide <- pivot_wider(
   data = long,
   names_from = "name",
@@ -379,50 +385,6 @@ wide <- pivot_wider(
 
 wide
 ```
-
-# R markdown 
-
-## R markdown
-
-```{r, echo = F, out.width='80%'}
-
-knitr::include_graphics("figures/reproducibility_court.png")
-```
-
-## R markdown {.smaller}
-
-We won't have the opportunity to go into great depth outside of the basics in report generation, however you can learn more about the capabilities of R markdown from this book.
-
-```{r, echo = F, out.width='20%', fig.align='center'}
-
-knitr::include_graphics("figures/rmarkdown-definitive-guide.png")
-```
-
-::: aside
--   https://bookdown.org/yihui/rmarkdown/
-:::
-
-## R markdown {.smaller}
-
-```{r, echo = F, out.width='60%', fig.align='center'}
-
-knitr::include_graphics("figures/rmarkdown-cheatsheet.PNG")
-```
-
-::: aside
--   https://github.com/rstudio/cheatsheets/raw/main/rmarkdown-2.0.pdf
-:::
-
-## R markdown {.smaller}
-
-```{r, echo = F, out.width='60%', fig.align='center'}
-
-knitr::include_graphics("figures/rmarkdown-gallery.PNG")
-```
-
-::: aside
--   https://rmarkdown.rstudio.com/gallery.html
-:::
 
 
 
